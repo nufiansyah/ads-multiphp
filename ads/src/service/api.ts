@@ -48,10 +48,17 @@ export async function getPublishers(): Promise<Publisher[]> {
  * Add a new publisher
  */
 export async function addPublisher(pub: Publisher): Promise<void> {
+  const formBody = Object
+    .entries(pub)
+    .map(([k,v]) =>
+      encodeURIComponent(k) + '=' + encodeURIComponent(v)
+    )
+    .join('&');
+
   const res = await fetch(`${BACKEND_URL}/publishers`, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(pub),
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: formBody,
   });
   if (!res.ok) throw new Error(`Add publisher failed: ${res.status}`);
 }

@@ -14,11 +14,11 @@ const Publishers: NextPage = () => {
   const dsps = ['Select DSP', 'DSP One', 'DSP Two', 'DSP Three'];
 
   // Load existing publishers on mount
-  useEffect(() => {
-    getPublishers()
-      .then(setExisting)
-      .catch(console.error);
-  }, []);
+  // useEffect(() => {
+  //   getPublishers()
+  //     .then(setExisting)
+  //     .catch(console.error);
+  // }, []);
 
   function handleChange<K extends keyof Publisher>(key: K, value: Publisher[K]) {
     setForm(prev => ({ ...prev, [key]: value }));
@@ -28,12 +28,13 @@ const Publishers: NextPage = () => {
     e.preventDefault();
     try {
       await addPublisher(form);
-      const updated = await getPublishers();
-      setExisting(updated);
+      // const updated = await getPublishers();
+      // setExisting(updated);
       // Reset form
-      setForm({ name: '', id: 0, timeout: 0, currency: 'USD', dsp: 'Select DSP' });
-    } catch (err) {
+      // setForm({ name: '', id: 0, timeout: 0, currency: 'USD', dsp: 'Select DSP' });
+    } catch (err: any) {
       console.error(err);
+      alert(err.message)
     }
   }
 
@@ -85,8 +86,8 @@ const Publishers: NextPage = () => {
             onChange={e => handleChange('dsp', e.target.value)}
             className="w-full border border-gray-300 rounded p-2"
           >
-            {dsps.map(opt => (
-              <option key={opt} value={opt}>{opt}</option>
+            {dsps.map((opt, index) => (
+              <option key={index} value={index}>{opt}</option>
             ))}
           </select>
         </div>

@@ -1,0 +1,18 @@
+{
+  "width": "1920",
+  "height": "1080",
+  "cb": "1748188807722",
+  "ua": "Mozilla/5.0 (SMART-TV; Linux; Tizen 6.0) AppleWebKit/538.1 (KHTML, like Gecko) Version/6.0 TV Safari/538.1=",
+  "uip": "76.150.115.122",
+  "app_name": "Hulu",
+  "app_bundle": "G00000057007",
+  "device_model": "Tizen TV",
+  "device_make": "Samsung",
+  "device_category": "3",
+  "app_store_url": "https://www.samsung.com/us/appstore/app/g00000057007",
+  "ifa": "6259b38f-ab3b-44fc-9377-3e455cc7cedf",
+  "device_os": "Tizen",
+  "sid": "1982",
+  "minduration": "15",
+  "maxduration": "30"
+}
