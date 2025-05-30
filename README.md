@@ -4,8 +4,10 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ### Install
 ```bash
+cd ads
 npm install
 
+cd ..
 php -S 0.0.0.0:5000
 ```
 
@@ -13,6 +15,7 @@ php -S 0.0.0.0:5000
 First, run the development server:
 
 ```bash
+cd ads
 npm run dev
 ```
 
